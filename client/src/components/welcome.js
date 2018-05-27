@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Welcome to our slice of paradise</div>;
+export default () => <div>Welcome the landing page of the Flag Football ScoreBoard App!</div>;

@@ -34,6 +34,8 @@ ReactDOM.render(
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
         <Route path="feature" component={RequireAuth(Feature)} />
+        {/* In here we include the form for the following: host game/ join lobby => some basic hosting info ||enter join code */}
+        {/* Here we include compiled overlay components with RequireAuth(ManagerType ? host : parent) */}
       </Route>
     </Router>
   </Provider>

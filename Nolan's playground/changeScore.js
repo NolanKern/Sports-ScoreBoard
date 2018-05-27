@@ -20,10 +20,10 @@ class ChangeScore extends React.Component {
         return (
         <div>
             <button onClick={this.IncrementScore} id='Home' value='6'>Home Touchdown</button>
-            <button onClick={this.IncrementScore} id='Home' value='1'>From 3-yard line</button>
+            <button onClick={this.IncrementScore} id='Home' value='1'>From 5-yard line</button>
             <button onClick={this.IncrementScore} id='Home' value='2'>From 10-yard line</button>
             <button onClick={this.IncrementScore} id='Away' value='6'>Away Touchdown</button>
-            <button onClick={this.IncrementScore} id='Away' value='1'>From 3-yard line</button>
+            <button onClick={this.IncrementScore} id='Away' value='1'>From 5-yard line</button>
             <button onClick={this.IncrementScore} id='Away' value='2'>From 10-yard line</button>
         </div>
         );
