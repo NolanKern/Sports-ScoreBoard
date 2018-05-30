@@ -23,3 +23,19 @@ const port = process.env.PORT || 3090;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server listening on:', port);
+
+// // set-up a connection between the client and the server
+// var socket = io.connect();
+
+// // let's assume that the client page, once rendered, knows what room it wants to join
+// var room = "abc123";
+
+// socket.on('connect', function() {
+//    // Connected, let's sign-up for to receive messages for this room
+//    socket.emit('room', room);
+// });
+
+// socket.on('message', function(data) {
+//      
+// I think I have a switch here for what changes are made to the interface
+// });
