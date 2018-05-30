@@ -6,7 +6,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
-import Signin from './components/auth/signin';
+import Signin from './components/auth/signin.jsx';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
 import Feature from './components/feature';
@@ -39,4 +39,4 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('#root'));

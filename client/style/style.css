@@ -1,3 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+.button {
+  
+}
+
 .error {
   color: red;
+}
+
+.notification {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+#signin-btn,#signup-btn {
+  background-color: white;
+  border: none;
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#signin-btn:hover,#signup-btn:hover {
+  background-color: white !important;
+  color: hsl(348, 100%, 61%) !important;
 }

@@ -11,7 +11,7 @@ class Signin extends Component {
   renderAlert() {
     if (this.props.errorMessage) {
       return (
-        <div className="alert alert-danger">
+        <div className="notification is-danger">
           <strong>Oops!</strong> {this.props.errorMessage}
         </div>
       );
@@ -23,14 +23,19 @@ class Signin extends Component {
 
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <input {...email} className="form-control" />
-        </fieldset>
-        <fieldset className="form-group">
+        <div className="field">
+          <p class="control has-icons-left ">
+            <input {...email} className="input" type="email" placeholder="Email"/>
+          
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+        </div>
+        <div className="field">
           <label>Password:</label>
           <input {...password} type="password" className="form-control" />
-        </fieldset>
+        </div>
         {this.renderAlert()}
         <button action="submit" className="btn btn-primary">Sign in</button>
       </form>
