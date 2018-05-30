@@ -6,23 +6,27 @@ class Header extends Component {
   renderLinks() {
     if (this.props.authenticated) {
       // show a link to sign out
-      return <li className="navbar-item">
-        <Link className="navbar-link" to="/signout">Sign Out</Link>
-      </li>
+      return (
+      <li className="navbar-item">
+        <Link id="signout-btn" className="sign-in-out-btn button has-background-danger has-text-white" to="/signout">
+          <span className="icon"><i className="fas fa-sign-out-alt"></i></span>
+          
+          <p>Sign Out</p> 
+        </Link>
+      </li>)
     } else {
       // show a link to sign in or sign up
       return [
         <li className="navbar-item" key={1}>
-          <Link id="signin-btn" className="button has-background-danger has-text-white" to="/signin">
-            <span className="icon"><i className="fas fa-sign-in-alt"></i>
-            </span>
+          <Link id="signin-btn" className="sign-in-out-btn button has-background-danger has-text-white" to="/signin">
+            <span className="icon"><i className="fas fa-sign-in-alt"></i></span>
             
             
             <p>Sign In</p>
           </Link>
         </li>,
         <li className="navbar-item" key={2}>
-          <Link id="signup-btn" className="button has-background-danger has-text-white" to="/signup">
+          <Link id="signup-btn" className="sign-in-out-btn button has-background-danger has-text-white" to="/signup">
             <span className="icon">
               <i className="fas fa-user-plus"></i>
             </span>

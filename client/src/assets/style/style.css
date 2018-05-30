@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+}
+
+.button {
+  
+}
+
+.error {
+  color: red;
+}
+
+.notification {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.sign-in-out-btn{
+  border: none;
+
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.sign-in-out-btn:hover, {
+  background-color: white !important;
+  color: hsl(348, 100%, 61%) !important;
+}
+
+#signin-form {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 70%;
+  
+  padding: 20px;
+  
+}
+
+@media only screen and (max-width: 1024px) {
+  #signin-form {
+    top: 150px;
+    left: 5%;
+    width: 90%; 
+  }
+}
+@media only screen and (max-width: 600px) {
+  
+}
