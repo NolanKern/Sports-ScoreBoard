@@ -4,7 +4,8 @@ import {
   AUTH_USER,
   UNAUTH_USER,
   AUTH_ERROR,
-  FETCH_MESSAGE
+  FETCH_MESSAGE,
+  CREATE_ROOM
 } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
@@ -67,4 +68,30 @@ export function fetchMessage() {
         });
       });
   }
+}
+
+export function createRoom({roomName}){
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/rooms`, { roomName })
+      .then(response => {
+        dispatch({ type: CREATE_ROOM });
+        browserHistory.push('/rooms/'+ roomName);
+      })
+      .catch(response => dispatch(roomError(response.data.error)));
+  }
+}
+
+export function changeRoom({roomName}){
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/rooms`, { roomName })
+      .then(response => {
+        dispatch({ type: CREATE_ROOM });
+        browserHistory.push('/rooms/'+ roomName);
+      })
+      .catch(response => dispatch(roomError(response.data.error)));
+  }
+}
+// ask about best way to do this
+export function alterData(){
+
 }
