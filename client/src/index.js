@@ -9,6 +9,7 @@ import App from './components/app';
 import Signin from './components/auth/signin.jsx';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
+import Login from './components/auth/login';
 import Feature from './components/feature';
 import RequireAuth from './components/auth/require_auth';
 import Welcome from './components/welcome';
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signup" component={Signup} />
+        <Route path="login" component={Login} />
         <Route path="feature" component={RequireAuth(Feature)} />
         {/* In here we include the form for the following: host game/ join lobby => some basic hosting info ||enter join code */}
         {/* Here we include compiled overlay components with RequireAuth(ManagerType ? host : parent) */}
