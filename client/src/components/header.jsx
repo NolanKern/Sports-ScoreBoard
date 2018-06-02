@@ -43,10 +43,19 @@ class Header extends Component {
     return (
       <nav className="navbar has-background-black-ter">
         <div className="container">
-          <Link to="/">
-            <div className="title is-2 has-text-danger">Score<span className="has-text-white">Zone</span></div>
-          </Link>
-          <ul className="navbar-menu">
+          <div className="navbar-brand">
+            <Link to="/">
+              <div id="nav-title" className="title is-2 has-text-danger">Score<span className="has-text-white">Zone</span></div>
+            </Link>
+
+            <a role="button" className="has-text-white navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          
+          <ul id="navMenu" className="navbar-menu">
             <div className="navbar-end">
               {this.renderLinks()}
             </div>
