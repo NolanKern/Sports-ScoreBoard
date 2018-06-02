@@ -23,19 +23,45 @@ const port = process.env.PORT || 3090;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server listening on:', port);
+const io = require("socket.io")(server);
 
-// // set-up a connection between the client and the server
-// var socket = io.connect();
+// Initialize a counter for the score of each team
+let homeScore=0;
+let awayScore=0;
 
-// // let's assume that the client page, once rendered, knows what room it wants to join
-// var room = "abc123";
+// Listen for connection from client
+io.on("connection", function(socket) {
+  let userAdded = false;
 
-// socket.on('connect', function() {
-//    // Connected, let's sign-up for to receive messages for this room
-//    socket.emit('room', room);
-// });
+  socket
+    .on("disconnect", function(err) {
+      console.log("User disconnected!");
+    })
+    .on("chat message", function(msg) {
+      io.emit("chat message", msg);
+      console.log(`message from ${socket.username}`);
+    })
+    .on("add user", function(user) {
+      if (userAdded) return;
 
-// socket.on('message', function(data) {
-//      
-// I think I have a switch here for what changes are made to the interface
-// });
+      socket.username = user;
+      userAdded = true;
+      io.emit("add user", user);
+    })
+    .on('homeScore6', action=>{
+      homeScore+=6;
+      io.emit('home_score', { response: homeScore});
+    })
+    .on('homeScore1', action =>{
+      homeScore++;
+      io.emit('home_score', { response: homeScore});
+    })
+    .on('awayScore6', action=>{
+      awayScore+=6;
+      io.emit('away_score', { response: awayScore});
+    })
+    .on('awayScore1', action=>{
+      awayScore++;
+      io.emit('away_score', { response: awayScore});
+    });
+});

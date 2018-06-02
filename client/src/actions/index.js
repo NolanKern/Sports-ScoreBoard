@@ -70,28 +70,29 @@ export function fetchMessage() {
   }
 }
 
-export function createRoom({roomName}){
-  return function(dispatch) {
-    axios.post(`${ROOT_URL}/rooms`, { roomName })
-      .then(response => {
-        dispatch({ type: CREATE_ROOM });
-        browserHistory.push('/rooms/'+ roomName);
-      })
-      .catch(response => dispatch(roomError(response.data.error)));
-  }
-}
 
-export function changeRoom({roomName}){
-  return function(dispatch) {
-    axios.post(`${ROOT_URL}/rooms`, { roomName })
-      .then(response => {
-        dispatch({ type: CREATE_ROOM });
-        browserHistory.push('/rooms/'+ roomName);
-      })
-      .catch(response => dispatch(roomError(response.data.error)));
-  }
-}
-// ask about best way to do this
-export function alterData(){
+// export function createRoom({roomName}){
+//   return function(dispatch) {
+//     axios.post(`${ROOT_URL}/rooms`, { roomName })
+//       .then(response => {
+//         dispatch({ type: CREATE_ROOM });
+//         browserHistory.push('/rooms/'+ roomName);
+//       })
+//       .catch(response => dispatch(roomError(response.data.error)));
+//   }
+// }
 
-}
+// export function changeRoom({roomName}){
+//   return function(dispatch) {
+//     axios.post(`${ROOT_URL}/rooms`, { roomName })
+//       .then(response => {
+//         dispatch({ type: CREATE_ROOM });
+//         browserHistory.push('/rooms/'+ roomName);
+//       })
+//       .catch(response => dispatch(roomError(response.data.error)));
+//   }
+// }
+// // ask about best way to do this
+// export function alterData(){
+
+// }
