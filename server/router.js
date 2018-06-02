@@ -11,5 +11,6 @@ module.exports = function(app) {
   });
   app.post('/signin', requireSignin, Authentication.signin);
   app.post('/signup', Authentication.signup);
-  // I believe I create paths here for 
+  app.post('/host');
+  app.post('/spectator');
 }

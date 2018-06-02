@@ -13,6 +13,16 @@ class Header extends Component {
           
           <p>Sign Out</p> 
         </Link>
+        <Link id="host-btn" className="sign-in-out-btn button has-background-danger has-text-white" to="/host">
+          <span className="icon"><i className="fas fa-sign-out-alt"></i></span>
+          
+          <p>Host a Game!</p> 
+        </Link>
+        <Link id="join-btn" className="sign-in-out-btn button has-background-danger has-text-white" to="/join">
+          <span className="icon"><i className="fas fa-sign-out-alt"></i></span>
+          
+          <p>Join a Game!</p> 
+        </Link>
       </li>)
     } else {
       // show a link to sign in or sign up
