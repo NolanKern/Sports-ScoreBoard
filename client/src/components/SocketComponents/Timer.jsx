@@ -78,12 +78,21 @@ export default class Timer extends Component {
   
     render() {
       return(
+        // 
         <div className='container'>
+        {/* this is the view of the host */}
             Quarter: {this.state.quarter}
             <button onClick={this.startTimer}>Start</button>
             <button onClick={this.pauseTimer}>Pause</button>
             m: {this.state.time.m} s: {this.state.time.s}
+
+            {/* render of the view of the spectator */}
+            <div>
+                Quarter: {this.state.quarter}
+                m: {this.state.time.m} s:{this.state.time.s}
+            </div>
         </div>
+        // 
       );
     }
   }

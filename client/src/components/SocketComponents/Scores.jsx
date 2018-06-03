@@ -9,21 +9,22 @@ export default class Scores extends Component {
         this.incrementAway = this.incrementAway.bind(this);
     }
 
-    incrementHome(value){
+    incrementHome(e){
         this.setState({
-            homeScore: (homeScore + value)
+            homeScore: (homeScore + e.value)
         });
     };
 
-    incrementHome(value){
+    incrementHome(e){
         this.setState({
-            awayScore: (awayScore + value)
+            awayScore: (awayScore + e.value)
         });
     };
 
     render(){
         return (
             <div className='container'>
+            {/* this is what the host sees and can interact with */}
                 {/* Start of the logic for the Home Drop Down menu */}
                 <div class="dropdown is-active">
                     <div class="dropdown-trigger">
@@ -65,6 +66,13 @@ export default class Scores extends Component {
                             </a>
                         </div>
                     </div>
+                </div>
+
+
+                {/* Below is the information that the user will see */}
+                <div>
+                    Home: {this.state.homeScore}
+                    Away: {this.state.awayScore}
                 </div>
             </div>
         )
