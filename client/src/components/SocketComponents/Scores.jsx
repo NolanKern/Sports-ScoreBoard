@@ -1,80 +1,49 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Scores extends Component {
-    constructor(){
-        super();
-        this.homeScore = 0;
-        this.awayScore = 0;
-        this.incrementHome = this.incrementHome.bind(this);
-        this.incrementAway = this.incrementAway.bind(this);
-    }
+  constructor() {
+    super();
 
-    incrementHome(e){
-        this.setState({
-            homeScore: (homeScore + e.value)
-        });
+    this.state = {
+      homeScore: 0,
+      awayScore: 0
     };
+    this.incrementHome = this.incrementHome.bind(this);
+    this.incrementAway = this.incrementAway.bind(this);
+  }
 
-    incrementHome(e){
-        this.setState({
-            awayScore: (awayScore + e.value)
-        });
-    };
+  incrementHome(e) {
+    const { value } = e.target;
+    this.setState((prevState, props) => ({
+      homeScore: prevState.homeScore + parseInt(value)
+    }));
+  }
 
-    render(){
-        return (
-            <div className='container'>
-            {/* this is what the host sees and can interact with */}
-                {/* Start of the logic for the Home Drop Down menu */}
-                <div class="dropdown is-active">
-                    <div class="dropdown-trigger">
-                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Home Scores!</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item" value='6' onSubmit={this.incrementHome}>
-                                Touchdown (+6)
-                            </a>
-                            <a class="dropdown-item" value='1' onSubmit={this.incrementHome}>
-                                Thirty-yard Line (+1)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                {/* Start of the logic for the Away Drop Down menu */}
-                <div class="dropdown is-active">
-                    <div class="dropdown-trigger">
-                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Away Scores!</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item" value='6' onSubmit={this.incrementAway}>
-                                Touchdown (+6)
-                            </a>
-                            <a class="dropdown-item" value='1' onSubmit={this.incrementAway}>
-                                Thirty-yard Line (+1)
-                            </a>
-                        </div>
-                    </div>
-                </div>
+//   Help here
+  incrementAway(e) {
+    const { value } = e.target;
+    this.setState((prevState, props) => ({
+      awayScore: prevState.awayScore + parseInt(value)
+    }));
+  }
 
+  render() {
+    return (
+        
+      <div className="container">
+        <button value ='1' onClick={this.incrementAway}>Away +1</button>
+        <button value ='2' onClick={this.incrementAway}>Away +2</button>
+        <button value ='6' onClick={this.incrementAway}>Away +6</button>
+        <button value ='1' onClick={this.incrementHome}>Home +1</button>
+        <button value ='2' onClick={this.incrementHome}>Home +2</button>
+        <button value ='6' onClick={this.incrementHome}>Home +6</button>
 
-                {/* Below is the information that the user will see */}
-                <div>
-                    Home: {this.state.homeScore}
-                    Away: {this.state.awayScore}
-                </div>
-            </div>
-        )
-    }
+        {/* Below is the information that the user will see */}
+        <div className='has-text-danger'>
+          Home: {this.state.homeScore}
+          Away: {this.state.awayScore}
+        </div>
+      </div>
+    );
+  }
 }
