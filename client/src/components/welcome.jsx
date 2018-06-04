@@ -1,62 +1,38 @@
-import React, { Component } from 'react';
-import SignIn from './auth/signin';
-import SignUp from './auth/signup';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-class Welcome extends Component {
-  constructor() {
-    super();
-    this.state = {
-        tab: ""
-    }
-  }
 
-  // renderForm(){
-  //   if 
-  // }
-  handleSignIn(){
-    this.setState({
-      tabs: 'signin'
-    });
-  }
-  handleSignUp(){
-    this.setState({
-      tabs: 'signup'
-    });
-  }
-
-  render(){
-    const form = (this.state.tab == 'signin') ?
-    (<SignIn />) : (<SignUp />);
-
-    return (
-
-      <div id="signin-form" className="column has-background-white">
-        <div className="tabs is-centered">
-          <ul>
-            <li className="is-active">
-              <a
-                className="button"
-                onclick={this.handleSignIn}
-                >
-                Sign In</a>
-            </li>
-            <li>
-              <a
-                className="button"
-                onclick={this.handleSignUp}
-                >
-                Sign Up</a>
-            </li>
-          </ul>
+export default () => 
+    
+    <div>
+      <br/><br/><br/>
+      <div className="columns">
+        <div className="column is-half">
+          <h1 className="title is-2 has-text-grey">
+            Welcome to 
+            <span className="has-text-danger"> Score</span>
+            <span className="has-text-white">Zone</span>,<br/>
+            the flag football live scoreboard app
+          </h1>
         </div>
-        
-        {form}
-        
+        <div className="column is-half">
+          <img src="/assets/scoreboard.png" alt=""/>
+        </div>
       </div>
-    );
-  }
-}
+      
 
+      <br/><br/>
 
+      <div className="columns">
+        <div className="column is-two-fifths">
+        </div>
 
-export default Welcome;
+        <div className="column is-three-fifths">
+          <h1 className="title is-2 has-text-grey">
+            Never ask anyone for the score again! Simply search for the game ID, and you can now keep track of the whole game at the tips of your fingers
+          </h1>
+        </div>
+      </div>
+
+    </div>
+;

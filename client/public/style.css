@@ -5,3 +5,7 @@
 #home-team, #away-team {
     padding: 10px;
 }
+
+.container {
+    width: 65%;
+}

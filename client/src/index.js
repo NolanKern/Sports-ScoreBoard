@@ -8,7 +8,7 @@ import reduxThunk from 'redux-thunk';
 import App from './components/app';
 import Signin from './components/auth/signin.jsx';
 import Signout from './components/auth/signout';
-import Signup from './components/auth/signup';
+import Signup from './components/auth/signup.jsx';
 import Login from './components/auth/login';
 import Feature from './components/feature';
 import RequireAuth from './components/auth/require_auth';
