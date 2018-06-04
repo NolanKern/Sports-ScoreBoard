@@ -17,16 +17,25 @@ if(process.env.NODE_ENV === "production"){
 }
 
 class Join extends Component {
-    render(){
-        <ScoreBoard />
-    }
+  constructor() {
+    super();
+    this.state = state;
+  }
+
+  render() {
+    const { socket } = this.state;
+    return (
+      <div>
+        <ChangeComps socket={socket} />
+      </div>
+    );
+  }
 }
 
-// Do I do this?
-// function mapStateToProps(state) {
-//   return {
-//     socket: state.socket
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    socket: state.socket
+  };
+}
 
-// export default connect(mapStateToProps)(Join);
+export default connect(mapStateToProps, null)(Join);

@@ -4,6 +4,7 @@ import './ScoreBoard'
 
 export default class ScoreBoard extends Component {
     render(){
-        <ChangeComps className='container' />
+        console.log("Heyoooo")
+        return <ChangeComps className='container' />;
     }
 }
