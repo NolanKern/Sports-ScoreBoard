@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
 import ScoreBoard from './SocketSpectator/ScoreBoard';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import io from 'socket.io-client';
 let state;
 
 if(process.env.NODE_ENV === "production"){
@@ -9,7 +12,7 @@ if(process.env.NODE_ENV === "production"){
   }
 }else{
   state = {
-    socket: io("http://localhost:8080")
+    socket: io("http://localhost:3090")
   }
 }
 
@@ -18,3 +21,12 @@ class Join extends Component {
         <ScoreBoard />
     }
 }
+
+// Do I do this?
+// function mapStateToProps(state) {
+//   return {
+//     socket: state.socket
+//   };
+// }
+
+// export default connect(mapStateToProps)(Join);

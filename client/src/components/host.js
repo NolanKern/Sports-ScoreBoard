@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
+import { connect } from "react-redux";
+import { Link } from "react-router";
 // import s from "./Socket.css";
 
 import ChangeComps from "./SocketComponents/ChangeComps";
 
 let state;
 
-if(process.env.NODE_ENV === "production"){
+if (process.env.NODE_ENV === "production") {
   state = {
     socket: io()
-  }
-}else{
+  };
+} else {
   state = {
-    socket: io("http://localhost:8080")
-  }
+    socket: io("http://localhost:3090")
+  };
 }
 
 class Host extends Component {
@@ -32,4 +34,10 @@ class Host extends Component {
   }
 }
 
-export default Socket;
+function mapStateToProps(state) {
+  return {
+    socket: state.socket
+  };
+}
+
+export default connect(mapStateToProps, null)(Host);
