@@ -43,6 +43,20 @@ html, body {
   
 }
 
+#welcome-title {
+  margin-bottom: 5px;
+}
+
+.room-btn-div {
+  width: 220px;
+  height: 220px;
+
+  margin: 10px;
+
+  border: 2px solid hsl(0, 0%, 48%);
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 1024px) {
   #signin-form {
     top: 150px;
