@@ -7,3 +7,7 @@ export const CREATE_ROOM = 'create_room';
 export const CHANGE_ROOM = 'change_room';
 export const ALTER_DATA = 'alter_data';
 export const ROOM_ERROR = 'room_error';
+export const UPDATE_HOME = 'update_home';
+export const UPDATE_AWAY = 'update_away';
+export const UPDATE_MINUTES = 'update_minutes';
+export const UPDATE_SECONDS = 'update_seconds';

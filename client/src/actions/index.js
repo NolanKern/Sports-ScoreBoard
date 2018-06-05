@@ -5,8 +5,13 @@ import {
   UNAUTH_USER,
   AUTH_ERROR,
   FETCH_MESSAGE,
-  CREATE_ROOM
+  CREATE_ROOM,
+  UPDATE_HOME,
+  UPDATE_AWAY,
+  UPDATE_MINUTES, 
+  UPDATE_SECONDS
 } from './types';
+import ScoreBoard from '../components/SocketSpectator/ScoreBoard';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -69,6 +74,33 @@ export function fetchMessage() {
       });
   }
 }
+export function updateHome(score) {
+  return {
+    type: UPDATE_HOME,
+    payload: score
+  }
+}
+
+export function updateAway(score) {
+  return {
+    type: UPDATE_AWAY,
+    payload: score
+  }
+}
+export function updateMinutes(m) {
+  return {
+    type: UPDATE_MINUTES,
+    payload: m
+  }
+}
+
+export function updateSeconds(s) {
+  return {
+    type: UPDATE_SECONDS,
+    payload: s
+  }
+}
+
 
 
 // export function createRoom({roomName}){

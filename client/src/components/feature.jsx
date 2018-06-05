@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import * as actions from '../actions';
 
 class Feature extends Component {
@@ -23,12 +24,22 @@ class Feature extends Component {
         <br/><br/><br/><br/>
 
         <div className="columns is-variable is-3">
-          <div className="room-btn-div column is-3 is-offset-3">
-            <p className="has-text-grey">create room</p>
-          </div>
-          <div className="room-btn-div column is-3">
-            <p className="has-text-grey">join room</p>
-          </div>
+          
+
+          <Link id="host-btn" className="column is-3 is-offset-3 room-btn-div has-text-centered" to="/host">
+          <br/><br/>
+            <span className="icon room-btn-icon"><i className="fas fa-plus"></i></span>
+            <br/><br/>
+
+            <p className="room-btn-p">Host a Game</p>
+          </Link>
+          <Link id="join-btn" className="column is-3 room-btn-div has-text-centered" to="/join">
+          <br/><br/>
+            <span className="icon room-btn-icon"><i className="fas fa-sign-out-alt"></i></span>
+            <br/><br/>
+            
+            <p className="room-btn-p">Join a Game</p>
+          </Link>
         </div>
       </div>
 
