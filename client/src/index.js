@@ -16,7 +16,9 @@ import Welcome from './components/welcome';
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 import Host from './components/host.js';
-import ScoreBoard from './components/SocketSpectator/ScoreBoard.jsx';
+
+import {ScoreBoard as Join} from './components/SocketSpectator/ScoreBoard.jsx';
+
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);

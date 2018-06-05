@@ -5,11 +5,15 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 export default class ChangeComps extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
         <div>
-            <Scores />
-            <Timer />
+            <Scores {...this.props}/>
+            <Timer {...this.props}/>
         </div>
         );
     }

@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import io from "socket.io-client";
 import { connect } from "react-redux";
 import { Link } from "react-router";
+import {updateHome, updateAway, updateMinutes, updateSeconds} from '../actions';
 // import s from "./Socket.css";
 
 import ChangeComps from "./SocketComponents/ChangeComps";
+import ScoreBoard from "./SocketSpectator/ScoreBoard";
 
 let state;
 
@@ -28,7 +30,8 @@ class Host extends Component {
     const { socket } = this.state;
     return (
       <div>
-        <ChangeComps socket={socket} />
+        <ChangeComps socket={socket} {...this.props}/>
+        <ScoreBoard socket={socket} {...this.props} />
       </div>
     );
   }
@@ -36,8 +39,28 @@ class Host extends Component {
 
 function mapStateToProps(state) {
   return {
-    socket: state.socket
+    homeScore: state.score.homeScore,
+    awayScore: state.score.awayScore,
+    minutes: state.minutes,
+    seconds: state.seconds
   };
 }
+const mapDispatchToProps = function(dispatch){
+  return{
+    updateHome(value){
+      dispatch(updateHome(value))
+    },
+    updateAway(value){
+      dispatch(updateAway(value))
+    },
+    updateMinutes(){
+      dispatch(minutes())
+    },
+    updateSeconds(){
+      dispatch(seconds())
+    }
+    
+  }
+}
 
-export default connect(mapStateToProps, null)(Host);
+export default connect(mapStateToProps, mapDispatchToProps)(Host);
