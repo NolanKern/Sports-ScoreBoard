@@ -17,8 +17,7 @@ import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 import Host from './components/host.js';
 
-import {ScoreBoard as Join} from './components/SocketSpectator/ScoreBoard.jsx';
-
+import Join from './components/join.js';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
@@ -41,7 +40,7 @@ ReactDOM.render(
         <Route path="login" component={Login} />
         <Route path="feature" component={RequireAuth(Feature)} />
         <Route path="host" component={Host} />
-        <Route path="join" component={ScoreBoard} />
+        <Route path="join" component={Join} />
       </Route>
     </Router>
   </Provider>

@@ -88,23 +88,3 @@ export default class Timer extends Component {
     );
   }
 }
-
-// // another way of doing it see index
-// var socket = io.connect(window.location.hostname);
-
-// socket.on('timer', function (data) {
-//     $('#counter').html(data.countdown);
-// });
-
-// $('#reset').click(function() {
-//     socket.emit('reset');
-// });
-
-// render(){
-//   return (
-//     <div>
-//       <button id='timer'>Start Game</button>
-//       <button id='pause'>Pause game</button>
-//     </div>
-//   )
-// }

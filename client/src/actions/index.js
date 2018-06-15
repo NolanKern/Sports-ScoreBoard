@@ -9,7 +9,24 @@ import {
   UPDATE_HOME,
   UPDATE_AWAY,
   UPDATE_MINUTES, 
-  UPDATE_SECONDS
+  UPDATE_SECONDS,
+  CREATE_TIME,
+  FETCH_TIME,
+  PAUSE_TIME,
+  UNPAUSE_TIME,
+  JOIN_ROOM_REQUEST,
+  JOIN_ROOM_SUCCESS,
+  LEAVE_ROOM_REQUEST,
+  LEAVE_ROOM_SUCCESS,
+  LIST_ROOMS_REQUEST,
+  LIST_ROOMS_SUCCESS,
+  SET_ATTEMPTED_ROOM,
+  CLEAR_ATTEMPTED_ROOM,
+  WS_ERROR,
+  UPDATE_USERS,
+  CLEAR_ERROR,
+  CLEAR_TOAST,
+  CONNECTION_OPENED
 } from './types';
 import ScoreBoard from '../components/SocketSpectator/ScoreBoard';
 
@@ -101,30 +118,29 @@ export function updateSeconds(s) {
   }
 }
 
+export function createTime(){
+  return {
+    type: CREATE_TIME,
+    payload: Math.floor(Date.now() / 1000) + 1200
+  }
+}
 
+export function fetchTime(t) {
+  return {
+    type: FETCH_TIME,
+    payload: t
+  }
+}
 
-// export function createRoom({roomName}){
-//   return function(dispatch) {
-//     axios.post(`${ROOT_URL}/rooms`, { roomName })
-//       .then(response => {
-//         dispatch({ type: CREATE_ROOM });
-//         browserHistory.push('/rooms/'+ roomName);
-//       })
-//       .catch(response => dispatch(roomError(response.data.error)));
-//   }
-// }
+export function pauseTime(t){
+  return{
+    type: PAUSE_TIME,
+    payload: t
+  }
+}
 
-// export function changeRoom({roomName}){
-//   return function(dispatch) {
-//     axios.post(`${ROOT_URL}/rooms`, { roomName })
-//       .then(response => {
-//         dispatch({ type: CREATE_ROOM });
-//         browserHistory.push('/rooms/'+ roomName);
-//       })
-//       .catch(response => dispatch(roomError(response.data.error)));
-//   }
-// }
-// // ask about best way to do this
-// export function alterData(){
-
-// }
+export function unpauseTime(t){
+  return {
+    
+  }
+}
