@@ -25,6 +25,9 @@ export default class Timer extends Component {
     let divisor_for_seconds = divisor_for_minutes % 60;
     let seconds = Math.ceil(divisor_for_seconds);
 
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
     let obj = {
       h: hours,
       m: minutes,
@@ -69,20 +72,21 @@ export default class Timer extends Component {
   }
 
   render() {
+    let minutes = this.state.time.m;
+    let seconds = this.state.time.s;
+
     return (
       //
-      <div className="container" className="has-text-danger">
+      <div className="container" className="has-text-white">
         {/* this is the view of the host */}
-        Quarter: {this.state.quarter}
-        <p />
-        <button onClick={this.startTimer}>Start</button>
-        <button onClick={this.pauseTimer}>Pause</button>
-        m: {this.state.time.m} s: {this.state.time.s}
+        <button id="time-start-btn" className="button score-btn" onClick={this.startTimer}>Start</button>
+        <button id="time-pause-btn" className="button score-btn" onClick={this.pauseTimer}>Pause</button>
+        <p id="timer">
+          {minutes}:{seconds}
+        </p>
+        
         {/* render of the view of the spectator */}
-        <div>
-          Quarter: {this.state.quarter}
-          m: {this.state.time.m} s:{this.state.time.s}
-        </div>
+        
       </div>
       //
     );

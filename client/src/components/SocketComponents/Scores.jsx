@@ -90,10 +90,10 @@ class Scores extends Component {
         
 
         {/* Below is the information that the user will see */}
-        <div className='has-text-danger'>
+        {/* <div className='has-text-danger'>
           Home: {this.state.homeScore}
           Away: {this.state.awayScore}
-        </div>
+        </div> */}
       </div>
     );
   }

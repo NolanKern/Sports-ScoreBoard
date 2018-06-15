@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ChangeComps from '../SocketComponents/ChangeComps';
 import './ScoreBoard';
 import { connect } from 'react-redux';
+import Timer from '../SocketComponents/Timer'
 
 export default class ScoreBoard extends Component {
    constructor(){
@@ -54,7 +55,7 @@ export default class ScoreBoard extends Component {
                         </div>
                         <div className="column is-one-third">
                            <div id="game-time" className="title is-2 has-text-white has-text-centered">
-                              {this.props.minutes}:{this.props.seconds}
+                              <Timer />
                            </div>
                         </div>
                         <div className="column is-one-third">

@@ -12,8 +12,9 @@ export default class ChangeComps extends Component {
     render(){
         return(
         <div>
+            <br/><br/><br/><br/>
             <Scores {...this.props}/>
-            <Timer {...this.props}/>
+            {/* <Timer {...this.props}/> */}
         </div>
         );
     }
