@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Grass from './animatedGrass'
 
 
 export default () => 
     
-    <div>
+    <div id="welcome-page">
       <br/><br/><br/>
       <div className="columns">
         <div className="column is-half">
@@ -33,6 +34,7 @@ export default () =>
           </h1>
         </div>
       </div>
+     
 
     </div>
 ;

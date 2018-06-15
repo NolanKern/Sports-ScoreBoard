@@ -84,34 +84,52 @@ html, body {
 
 #home-btn1 {
   position: absolute;
-  top: 150px;
+  top: 50px;
   left: -150px
 }
 #home-btn2 {
   position: absolute;
-  top: 200px;
+  top: 100px;
   left: -150px
 }
 #home-btn6 {
   position: absolute;
-  top: 250px;
+  top: 150px;
   left: -150px
 }
 
 #away-btn1 {
   position: absolute;
-  top: 150px;
+  top: 50px;
   right: -150px  
 }
 #away-btn2 {
   position: absolute;
-  top: 200px;
+  top: 100px;
   right: -150px
 }
 #away-btn6 {
   position: absolute;
-  top: 250px;
+  top: 150px;
   right: -150px
+}
+
+#time-start-btn {
+  position: absolute;
+  bottom: -50px;
+  
+  left: 200px
+}
+#time-pause-btn {
+  position: absolute;
+  bottom: -50px;
+
+  right: 200px;
+}
+
+#timer {
+  margin-top: -15px;
+  font-size: 30px;
 }
 
 .score-btn {
@@ -122,6 +140,14 @@ html, body {
 .container {
   width: 65%;
 }
+
+#welcome-page {
+  position: absolute;
+  left: -125px;
+  right: -125px;
+}
+
+
 
 
 
